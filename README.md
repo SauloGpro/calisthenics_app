@@ -1,7 +1,7 @@
-📜 ##Notarization Blockchain
+📜 ## Notarization Blockchain
 - Notarization Blockchain es una aplicación que permite gestionar la notarización de documentos utilizando una blockchain privada. La solución está desarrollada en Java con Spring Boot y utiliza una base de datos relacional para almacenar los datos. Este proyecto está diseñado para garantizar la trazabilidad, integridad y autenticidad de los documentos a través de una cadena de bloques.
 
-🚀 ##Características
+🚀 ## Características
 - Registro de usuarios: Los usuarios pueden registrarse y autenticarse en el sistema.
 - Añadir documentos a la blockchain: Los documentos son añadidos como bloques dentro de la blockchain, garantizando su integridad.
 - Validación de la blockchain: Comprueba que la cadena de bloques no ha sido alterada.
@@ -9,28 +9,28 @@
 - Búsqueda por hash del bloque.
 - Consulta de bloques asociados a un propietario.
 - Resumen de la blockchain: Consulta un resumen general de la cadena (número de bloques, integridad, etc.).
-🛠️ ##Tecnologías utilizadas
-**Backend 
+🛠️ ## Tecnologías utilizadas
+** Backend 
 - Lenguaje: Java (versión 21)
 - Framework principal: Spring Boot (v3.3.6)
 - Dependencias clave:
-    **Spring Boot Web
-    **Spring Data JPA
-    **Spring Security
-    **MySQL Connector
-    **JWT (Json Web Tokens) con jjwt
-    **Lombok
-    **MapStruct
+    ** Spring Boot Web
+    ** Spring Data JPA
+    **S pring Security
+    ** MySQL Connector
+    ** JWT (Json Web Tokens) con jjwt
+    ** Lombok
+    ** MapStruct
 - Base de datos
-    **MySQL:
+    ** MySQL:
     - Nombre: blockchain_db
-**Configuración en application.properties:
-  **properties
+** Configuración en application.properties:
+  properties
   Copiar código:
     spring.datasource.url=jdbc:mysql://localhost:3308/blockchain_db?createDatabaseIfNotExists=true
     spring.datasource.username=root
     spring.datasource.password=root
-📂 ##Estructura del proyecto
+📂 ## Estructura del proyecto
 El proyecto sigue una arquitectura típica de Spring Boot. A continuación, un desglose de las capas principales:
 
 bash
@@ -51,12 +51,12 @@ service/: Contiene la lógica de negocio (implementación de la blockchain).
 repository/: Maneja la persistencia utilizando JPA.
 model/: Contiene los modelos de dominio como Block y User.
 mapper/: MapStruct para convertir entre modelos de dominio, entidades y DTOs.
-📋 ##Endpoints de la API
-🔒 **Autenticación y Usuarios
+📋 ## Endpoints de la API
+🔒 ** Autenticación y Usuarios
 Método	Endpoint	Descripción	Cuerpo Ejemplo
 POST	/auth/register	Registrar un nuevo usuario	{ "username": "user1", "password": "1234", "email": "user@example.com" }
 POST	/auth/login	Iniciar sesión y obtener un JWT	{ "username": "user1", "password": "1234" }
-📜 **Blockchain
+📜 ** Blockchain
 Método	Endpoint	Descripción	Cuerpo Ejemplo
 POST	/blockchain/add	Añadir un bloque a la blockchain	{ "data": "Documento importante", "documentType": "Contrato", "owner": "user1" }
 GET	/blockchain/validate	Validar la integridad de la blockchain	-
@@ -64,11 +64,11 @@ GET	/blockchain/chain	Obtener todos los bloques	-
 GET	/blockchain/search/{hash}	Buscar un bloque por su hash	-
 GET	/blockchain/summary	Obtener un resumen de la blockchain	-
 GET	/blockchain/owner/{owner}	Obtener bloques por propietario	-
-📦 **Requisitos previos
+📦 ** Requisitos previos
 Java: Versión 21 o superior.
 Maven: Para gestionar las dependencias y construir el proyecto.
 MySQL: Una base de datos MySQL debe estar disponible y configurada.
-⚙️ **Instalación y ejecución
+⚙️ ** Instalación y ejecución
 Clonar el repositorio:
 bash
 Copiar código
@@ -143,10 +143,10 @@ Copiar código
     "documentType": "Contrato",
     "owner": "user1"
 }
-🛡️ ##Seguridad
+🛡️ ## Seguridad
 Autenticación: La API utiliza JWT para autenticar las solicitudes. Los usuarios deben autenticarse a través del endpoint /auth/login para obtener un token que luego deben incluir en el encabezado Authorization de las solicitudes protegidas.
 Spring Security: Protege los endpoints sensibles y maneja la autorización.
-🤝 ##Contribuciones
+🤝 ## Contribuciones
 Realiza un fork del repositorio.
 Crea una nueva rama para tu funcionalidad:
 bash
@@ -157,5 +157,5 @@ bash
 Copiar código
 git commit -m "Añadida nueva funcionalidad"
 Envía un pull request explicando los cambios realizados.
-📝 ##Licencia
+📝 ## Licencia
 Este proyecto está bajo la licencia MIT. Puedes consultar el archivo LICENSE para más información.
